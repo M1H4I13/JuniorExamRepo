@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "examenjunior"
+version = "0.1.0"
+description = ""
+authors = ["M1H4I13 <ginghinamihai02@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.35.0"
+uvicorn = "^0.27.0"
+pytest = "^7.4.3"
+pydantic = "^2.7.0"
+httpx = "^0.26.0"
+pymongo = "^7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

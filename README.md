@@ -70,6 +70,7 @@ and in the text box write what you want to search.
 Below is the "ADD OBJECT" button for adding in airplanes table
 Just complete the fields with the new values and click on "ADD OBJECT"
 
+For delete -> "Delete rows from Airplanes": to action this you must click on "Click here to see the table" to show the table "Airplanes", select the rows that you want to delete andd then click on the button "Delete rows from Airplanes".
 
 Values that I used:
     .json file for airplanes table:

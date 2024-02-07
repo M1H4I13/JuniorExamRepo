@@ -239,7 +239,6 @@ def delete_selected_rows(n_clicks, selected_rows, data):
     # After successful deletion, fetch and return updated data
     return fetch_data()[0].to_dict('records')
 
-
 def save_to_database(payload):
     url = 'http://127.0.0.1:8000/register_airplane/'
     try:

@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc, Input, Output, callback, dash_table
+from dash import Dash, html, dcc, Input, Output, callback, dash_table, ctx
 from dash.exceptions import PreventUpdate
 from dash import State
 import requests
@@ -43,10 +43,11 @@ app.layout = html.Div([
         dcc.Input(id='source', type='text', placeholder='Enter source'),
         html.Label("Destination:"),
         dcc.Input(id='destination', type='text', placeholder='Enter destination'),
+        html.Br(),
         html.Button('Add Object', id='add-object'),
     ]),
     html.Div(id='add-object-output'),
-    html.Button('Delete Selected Rows', id='delete-rows-button')  # Button to delete selected rows
+    html.Button('Delete rows from Airplanes', id='delete-rows-button')  # Button to delete selected rows
 ])
 
 def fetch_data():
@@ -95,9 +96,10 @@ def update_output(n_clicks):
             columns=[{"name": i, "id": i} for i in df_airplanes.columns],
             data=df_airplanes.to_dict('records'),
             editable=False,
-            filter_action="native",
-            sort_action="native",
-            sort_mode="multi",
+            row_deletable=True,
+            # filter_action="native",
+            # sort_action="native",
+            # sort_mode="multi",
             row_selectable="multi",
             page_action="native",
             page_current=0,
@@ -109,9 +111,10 @@ def update_output(n_clicks):
             columns=[{"name": i, "id": i} for i in df_landings.columns],
             data=df_landings.to_dict('records'),
             editable=False,
-            filter_action="native",
-            sort_action="native",
-            sort_mode="multi",
+            row_deletable=True,
+            # filter_action="native",
+            # sort_action="native",
+            # sort_mode="multi",
             row_selectable="multi",
             page_action="native",
             page_current=0,
@@ -123,9 +126,10 @@ def update_output(n_clicks):
             columns=[{"name": i, "id": i} for i in df_departures.columns],
             data=df_departures.to_dict('records'),
             editable=False,
-            filter_action="native",
-            sort_action="native",
-            sort_mode="multi",
+            row_deletable=True,
+            # filter_action="native",
+            # sort_action="native",
+            # sort_mode="multi",
             row_selectable="multi",
             page_action="native",
             page_current=0,
@@ -165,9 +169,9 @@ def search_object_callback(n_clicks, search_value, object_type):
                 columns=[{"name": i, "id": i} for i in search_result.columns],
                 data=search_result.to_dict('records'),
                 editable=False,
-                filter_action="native",
-                sort_action="native",
-                sort_mode="multi",
+                # filter_action="native",
+                # sort_action="native",
+                # sort_mode="multi",
                 row_selectable="multi",
                 page_action="native",
                 page_current=0,
@@ -199,6 +203,18 @@ def add_object(n_clicks, registration_number, model, flight_type, source, destin
     return save_to_database(payload)
 
 @app.callback(
+    Output('output', 'children'),
+    [Input('datatable-airplanes', 'selected_rows')]
+)
+def display_selected_row_data(selected_rows):
+    if selected_rows:
+        print("Selected rows indices:", selected_rows)  # Print selected rows indices in the terminal
+        # You can also print the corresponding row data if needed
+        # print("Selected rows data:", [df.iloc[i] for i in selected_rows])
+    return ""
+
+
+@app.callback(
     Output('datatable-airplanes', 'data'),
     Input('delete-rows-button', 'n_clicks'),
     State('datatable-airplanes', 'selected_rows'),
@@ -209,13 +225,21 @@ def delete_selected_rows(n_clicks, selected_rows, data):
     if not n_clicks or not selected_rows:
         raise PreventUpdate
 
-    # Get the indices of selected rows to be deleted
-    rows_to_delete = [i for i in selected_rows]
+    # Get the identification numbers of selected rows to be deleted
+    identification_numbers = [data[i]['_id'] for i in selected_rows]
 
-    # Delete selected rows from the data
-    updated_data = [data[i] for i in range(len(data)) if i not in rows_to_delete]
+    # Loop through each identification number and send a delete request
+    for id_number in identification_numbers:
+        delete_url = f'http://127.0.0.1:8000/delete_object/?object_type=airplanes&identification_number={id_number}'
+        try:
+            response = requests.delete(delete_url)
+            response.raise_for_status()
+        except requests.exceptions.RequestException as e:
+            return f"Error deleting object with ID {id_number}: {e}"
 
-    return updated_data
+    # After successful deletion, fetch and return updated data
+    return fetch_data()[0].to_dict('records')
+
 
 def save_to_database(payload):
     url = 'http://127.0.0.1:8000/register_airplane/'

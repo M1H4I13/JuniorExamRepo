@@ -213,7 +213,6 @@ def display_selected_row_data(selected_rows):
         # print("Selected rows data:", [df.iloc[i] for i in selected_rows])
     return ""
 
-
 @app.callback(
     Output('datatable-airplanes', 'data'),
     Input('delete-rows-button', 'n_clicks'),

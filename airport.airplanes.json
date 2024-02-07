@@ -1,0 +1,136 @@
+[{
+  "_id": 1,
+  "registration_number": "asd",
+  "model": "asdf",
+  "flight_type": "ASD",
+  "source": "SAD",
+  "destination": "ASD"
+},
+{
+  "_id": 4,
+  "registration_number": "qqq",
+  "model": "asdf",
+  "flight_type": "asd",
+  "source": "asd",
+  "destination": "asd"
+},
+{
+  "_id": 5,
+  "registration_number": "aaa",
+  "model": "aaa",
+  "flight_type": "aaa",
+  "source": "aaa",
+  "destination": "aaa"
+},
+{
+  "_id": 7,
+  "registration_number": "aasxc1",
+  "model": "asd",
+  "flight_type": "int",
+  "source": "sdf",
+  "destination": "asd"
+},
+{
+  "_id": 10,
+  "registration_number": "ASDFG",
+  "model": "SAD",
+  "flight_type": "SADF",
+  "source": "SADsdf",
+  "destination": "sad"
+},
+{
+  "_id": 11,
+  "registration_number": "sdf",
+  "model": "wdf",
+  "flight_type": "wesdf",
+  "source": "df",
+  "destination": "sdf"
+},
+{
+  "_id": 12,
+  "registration_number": "asd",
+  "model": "asdf",
+  "flight_type": "asdf",
+  "source": "asd",
+  "destination": "swed"
+},
+{
+  "_id": 14,
+  "registration_number": "asd",
+  "model": "asd",
+  "flight_type": "asd",
+  "source": "asd",
+  "destination": "a111"
+},
+{
+  "_id": 15,
+  "registration_number": "asd",
+  "model": "asdfg",
+  "flight_type": "asdfg",
+  "source": "asdfg",
+  "destination": "Springvale"
+},
+{
+  "_id": 16,
+  "registration_number": "asd",
+  "model": "asdfg",
+  "flight_type": "asdfg",
+  "source": "asdfg",
+  "destination": "Springvale"
+},
+{
+  "_id": 17,
+  "registration_number": "aaaa",
+  "model": "bbbb",
+  "flight_type": "dom",
+  "source": "ccc",
+  "destination": "Springvale"
+},
+{
+  "_id": 18,
+  "registration_number": "abc123",
+  "model": "Boeing 737",
+  "flight_type": "DOM",
+  "source": "New York",
+  "destination": "Springvale"
+},
+{
+  "_id": 19,
+  "registration_number": "qwe",
+  "model": "qwe",
+  "flight_type": "qwe",
+  "source": "qwe",
+  "destination": "qwe"
+},
+{
+  "_id": 21,
+  "registration_number": "a1",
+  "model": "a1",
+  "flight_type": "a1",
+  "source": "a1",
+  "destination": "a1"
+},
+{
+  "_id": 23,
+  "registration_number": "q",
+  "model": "q",
+  "flight_type": "q",
+  "source": "q",
+  "destination": "q"
+},
+{
+  "_id": 24,
+  "registration_number": "w",
+  "model": "w",
+  "flight_type": "w",
+  "source": "w",
+  "destination": "w"
+},
+{
+  "_id": 26,
+  "registration_number": "aaaaa",
+  "model": "string",
+  "flight_type": "string",
+  "source": "string",
+  "destination": "Springvale"
+}]

@@ -1,0 +1,45 @@
+[{
+  "_id": 1,
+  "registration_number": "2",
+  "gate": 1,
+  "departure_time": {
+    "$date": "2024-02-06T14:22:31.055Z"
+  },
+  "runway_used": 2
+},
+{
+  "_id": 2,
+  "registration_number": "2",
+  "gate": 1,
+  "departure_time": {
+    "$date": "2024-02-06T14:23:55.174Z"
+  },
+  "runway_used": 3
+},
+{
+  "_id": 3,
+  "registration_number": "1",
+  "gate": 3,
+  "departure_time": {
+    "$date": "2024-02-06T15:13:07.365Z"
+  },
+  "runway_used": 1
+},
+{
+  "_id": 4,
+  "registration_number": "2",
+  "gate": 1,
+  "departure_time": {
+    "$date": "2024-02-06T19:15:43.638Z"
+  },
+  "runway_used": 2
+},
+{
+  "_id": 5,
+  "registration_number": "q",
+  "gate": 2,
+  "departure_time": {
+    "$date": "2024-02-07T16:43:22.801Z"
+  },
+  "runway_used": 1
+}]

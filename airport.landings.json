@@ -1,0 +1,72 @@
+[{
+  "_id": 1,
+  "registration_number": "1",
+  "reason": "asdf",
+  "landing_time": {
+    "$date": "2024-02-06T14:20:31.661Z"
+  },
+  "runway_used": 2
+},
+{
+  "_id": 3,
+  "registration_number": "2",
+  "reason": "zxc",
+  "landing_time": {
+    "$date": "2024-02-06T14:27:07.097Z"
+  },
+  "runway_used": 1
+},
+{
+  "_id": 4,
+  "registration_number": "asdf",
+  "reason": "sd",
+  "landing_time": {
+    "$date": "2024-02-06T14:46:17.550Z"
+  },
+  "runway_used": 1
+},
+{
+  "_id": 5,
+  "registration_number": "2",
+  "reason": "xc",
+  "landing_time": {
+    "$date": "2024-02-06T15:12:57.382Z"
+  },
+  "runway_used": 2
+},
+{
+  "_id": 6,
+  "registration_number": "2",
+  "reason": "sdf",
+  "landing_time": {
+    "$date": "2024-02-06T17:19:43.948Z"
+  },
+  "runway_used": 1
+},
+{
+  "_id": 7,
+  "registration_number": "2",
+  "reason": "asdfgh",
+  "landing_time": {
+    "$date": "2024-02-06T19:15:06.250Z"
+  },
+  "runway_used": 2
+},
+{
+  "_id": 8,
+  "registration_number": "2",
+  "reason": "aaaa",
+  "landing_time": {
+    "$date": "2024-02-06T19:15:22.311Z"
+  },
+  "runway_used": 2
+},
+{
+  "_id": 9,
+  "registration_number": "q",
+  "reason": "sdf",
+  "landing_time": {
+    "$date": "2024-02-07T16:43:01.842Z"
+  },
+  "runway_used": 2
+}]

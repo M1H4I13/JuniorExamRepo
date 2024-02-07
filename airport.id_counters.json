@@ -1,0 +1,12 @@
+[{
+  "_id": "airplane_counter",
+  "seq": 26
+},
+{
+  "_id": "landing_counter",
+  "seq": 9
+},
+{
+  "_id": "departure_counter",
+  "seq": 5
+}]
